@@ -1,0 +1,97 @@
+{% extends "epe_app/base.html" %}
+{% load widget_tweaks %}
+{% block content %}
+
+<form method="POST" action="">
+	{% csrf_token %}
+	<div class="row">
+		<div class="col-3"></div>
+		<div class="col-6">
+			<div class="container-fluid">
+				<div class="card text-white bg-info mb-3" style="max-width: 100%;">
+					<div class="card-header text-center"><h3>Add/Update Parameter Definition</h3></div>
+					<div class="card-body bg-light" >
+						<div class="row">
+							<div class="col">
+								<div class="input-group input-group-sm mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">ID</span>
+									</div>
+									{% render_field pd_form.pd_id class="form-control" readonly="True" id="pd_id" %}
+									<!--<input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">-->
+								</div>
+								<div class="input-group input-group-sm mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">Name</span>
+									</div>
+									{% render_field pd_form.pd_name id="pd_name" class="form-control" %}
+									<!--<input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">-->
+								</div>
+								<div class="input-group input-group-sm mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">Description</span>
+									</div>
+									{% render_field pd_form.pd_description id="pd_description" class="form-control" %}
+									<!--<input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">-->
+								</div>
+								<div class="input-group input-group-sm mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">Dictionary</span>
+									</div>
+									{% render_field pd_form.pd_library id="pd_library" class="form-control" %}
+									<!--<input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">-->
+								</div>
+								<div class="input-group input-group-sm mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">Unit Type</span>
+									</div>
+									{% render_field pd_form.pd_unit_type id="pd_unit_type" class="form-control" %}
+									<!--<input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">-->
+								</div>
+								<div class="input-group input-group-sm mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">Data Type</span>
+									</div>
+									{% render_field pd_form.pd_datatype id="pd_datatype" class="form-control" %}
+									<!--<input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">-->
+								</div>
+								<div class="input-group input-group-sm mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">Digital Source</span>
+									</div>
+									{% render_field pd_form.pd_digital_source id="pd_digital_source" class="form-control" %}
+									<!--<input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">-->
+								</div>
+								<div class="input-group input-group-sm mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">Owner</span>
+									</div>
+									{% render_field pd_form.pd_owner id="pd_owner" class="form-control" %}
+									<!--<input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">-->
+								</div>
+								<div class="row">
+									<div class="col-1"></div>
+									<div class="col-10">
+										<div class="message text-center">
+											{% for message in messages %}
+											<a {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</a>
+											{% endfor %}
+										</div>
+									</div>
+									<div class="col-1"></div>
+								</div>
+							</div>
+						</div>
+						<button type="submit" class="btn btn-success "><i class="fas fa-check"></i> Submit</button>
+						<a href="{% url 'param_def_list' %}" class="btn btn-danger float-right">
+							<i class="fas fa-times"></i> Cancel
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-3"></div>
+	</div>
+</form>
+
+{% endblock content %}
