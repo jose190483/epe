@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Web Application</title>
 
     <!-- Fontawesome CDN -->
@@ -22,26 +22,21 @@
 <body style="background-color:#D3D3D3;">
 <!-- Header Section -->
 <div class="header_style mb-2 ">
-    <div class="container-fluid">
-        <div class="row text-center">
-            <div class="title_style col-3">
-                <h1 style="font-weight:Bold;"><a href="{% url 'home_page' %}" class="btn btn-dark"><i class="fas fa-home"></i></a></h1>
-            </div>
-            <div class="col-6">
-                <h1 style="font-weight: Bold;color:white">Technical Documentation</h1>
-            </div>
-            <div class="col-2">
-                <h6>Hi, {{ first_name }}</h6>
-                <h6 style="color:red">{{ role }}</h6>
-            </div>
-            <div class="col-1">
-                <h1><a href="{% url 'login_page' %}" class="btn btn-dark "><i class="fas fa-sign-out-alt"></i></a></h1>
-            </div>
+    <div class="d-flex bd-highlight">
+        <div class="p-2 me-auto bd-highlight"><h1 style="font-weight:Bold;"><a href="{% url 'home_page' %}" class="btn btn-dark"><i class="fas fa-home"></i></a></h1>
         </div>
+        <div class=" p-1 bd-highlight ">
+            <img src="{% static 'images/logo.png' %}" alt="Logo" width="50" height="50">
+        </div>
+        <div class="me-auto p-1 bd-highlight ">
+            <h3 class="text-white ml-2"> Parameter Analysis </h3>
+        </div>
+        <div class="p-2 bd-highlight"><h6 class="text-white">Hi, {{ request.session.first_name }}</h6>
+            <h6 class="text-warning">{{ request.session.ses_role }}</h6></div>
+        <div class="p-2 bd-highlight"><a href="{% url 'login_page' %}" class="btn btn-dark "><i class="fas fa-sign-out-alt"></i></a></div>
+
     </div>
 </div>
-<!-- Content Section -->
-<br>
 {% block content %}
 {% endblock content %}
 
