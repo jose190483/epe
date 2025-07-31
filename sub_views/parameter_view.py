@@ -41,7 +41,7 @@ def parameter_add(request,param_id=0):
                 last_id = prameter_info.objects.latest('id').id
                 prameter_info.objects.filter(id=last_id).update(p_id=param_num_next)
                 param_id = prameter_info.objects.get(p_id=param_num_next).id
-                messages.success(request, 'Record Updated Successfully')
+                messages.SUCCESS(request, 'Record Updated Successfully')
                 return redirect('/epe/parameter_update/'+ str(last_id))
             else:
                 print("Requirement parameter_form is Not Valid")

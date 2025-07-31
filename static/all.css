@@ -44,3 +44,11 @@ border-color:black;
   color: white;
   text-align:center;
 }
+
+.shadow-box-table {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* strong shadow */
+    transition: box-shadow 0.3s ease;
+    padding-block: 10px;
+    border-radius: 5px;
+    background-color:white;
+}
