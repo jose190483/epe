@@ -1,5 +1,5 @@
 from django.db import models
-from ..models import unit_type_info,system_of_measurement_info
+from epe.epe_app.models import unit_type_info,system_of_measurement_info
 class uom_info_1(models.Model):
     unit_type=models.ForeignKey(unit_type_info,on_delete=models.CASCADE,default=1)
     symbol = models.CharField(max_length=100, default='')
