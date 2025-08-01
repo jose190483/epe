@@ -20,5 +20,4 @@ urlpatterns = [
     path('project_update/<int:project_id>/', views.project_add, name='project_update'),  # Update country
     path('project_delete/<int:project_id>/', views.project_delete, name='project_delete'),  # Delete country
     path('project_search/', views.project_search, name='project_search'),  # Delete country
-
 ]
