@@ -1,5 +1,5 @@
 from django import forms
-from ..models import prameter_definition_info
+from epe.epe_app.models import prameter_definition_info
 
 class parameter_definition_form(forms.ModelForm):
     class Meta:

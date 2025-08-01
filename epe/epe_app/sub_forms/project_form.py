@@ -1,5 +1,5 @@
 from django import forms
-from ..models import project_info
+from epe.epe_app.models import project_info
 
 class project_form(forms.ModelForm):
     class Meta:
