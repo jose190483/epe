@@ -3,8 +3,8 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.core.paginator import Paginator
 from django.db.models import Q
 
-from epe.epe_app.forms import parameter_form
-from epe.epe_app.models import prameter_info
+from ..forms import parameter_form
+from ..models import prameter_info
 from django.shortcuts import render, redirect
 from django.contrib import messages
 

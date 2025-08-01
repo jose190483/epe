@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from epe.epe_app.forms import CreateUserForm,UserextForm
+from ..forms import CreateUserForm,UserextForm
 from django.contrib import messages
 
 def registration_page(request):

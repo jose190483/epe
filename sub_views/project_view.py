@@ -1,9 +1,10 @@
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import ObjectDoesNotExist
 from django.core.paginator import Paginator
 from django.db.models import Q
 
-from epe.epe_app.forms import project_form
-from epe.epe_app.models import project_info
+from ..forms import project_form
+from ..models import project_info
 from django.shortcuts import render, redirect
 from django.contrib import messages
 

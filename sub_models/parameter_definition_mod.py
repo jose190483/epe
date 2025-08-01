@@ -1,5 +1,5 @@
 from django.db import models
-from epe.epe_app.models import datatype_Info,owner_info,digital_source_info,dictionary_Info,unit_type_info
+from ..models import datatype_Info,owner_info,digital_source_info,dictionary_Info,unit_type_info
 
 class prameter_definition_info(models.Model):
     pd_id = models.CharField(max_length=100, blank=True,null=True, default='')

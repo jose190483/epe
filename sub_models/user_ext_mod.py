@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
-from epe.epe_app.models import RoleInfo
+from ..models import RoleInfo
 
 class User_extInfo(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE,null=True)

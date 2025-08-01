@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 
-from epe.epe_app.models import User_extInfo
+from ..models import User_extInfo
 
 
 def login_page(request):
